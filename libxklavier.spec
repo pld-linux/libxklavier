@@ -1,11 +1,11 @@
 Name:		libxklavier
 Summary:	libXklavier library
-Version:	0.95
+Version:	0.96
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
-# Source0-md5:	5caeb8aea1caac0c3fb0f9115f846a14
+# Source0-md5:	e95baf323e145403a1cd4f9405da60da
 Patch0:		%{name}-xkb_base.patch
 Url:		http://gswitchit.sourceforge.net/
 BuildRequires:	autoconf
