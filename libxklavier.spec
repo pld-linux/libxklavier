@@ -12,6 +12,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	doxygen
 BuildRequires:	libxml2-devel 
+BuildRequires:	libtool
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,6 +40,7 @@ Static version of libxklavier.
 %patch0 -p1
 
 %build
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
