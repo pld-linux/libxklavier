@@ -8,7 +8,7 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
 # Source0-md5:	1a4c6b95bc74bccaf5a7e394f928a54f
 Patch0:		%{name}-xkb_base.patch
-URL:		http://gswitchit.sourceforge.net/
+URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README 
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/libxklavier
 
