@@ -6,6 +6,7 @@ License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
 # Source0-md5:	5caeb8aea1caac0c3fb0f9115f846a14
+Patch0:		%{name}-xkb_base.patch
 Url:		http://gswitchit.sourceforge.net/
 BuildRequires:	doxygen
 BuildRequires:	libxml2-devel 
@@ -33,6 +34,7 @@ Static version of libxklavier.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
