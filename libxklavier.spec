@@ -8,6 +8,8 @@ Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
 # Source0-md5:	5caeb8aea1caac0c3fb0f9115f846a14
 Patch0:		%{name}-xkb_base.patch
 Url:		http://gswitchit.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	doxygen
 BuildRequires:	libxml2-devel 
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,6 +39,9 @@ Static version of libxklavier.
 %patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 
 %{__make}
