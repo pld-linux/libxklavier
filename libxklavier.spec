@@ -13,8 +13,8 @@ BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	doxygen
-BuildRequires:	libxml2-devel 
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel 
 BuildRequires:	pkgconfig
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,7 +28,7 @@ Ta biblioteka pozwala upro¶ciæ programowanie zwi±zane z XKB.
 Summary:	Header files to develop libxklavier applications
 Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem libxklavier
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	XFree86-devel
 Requires:	libxml2-devel
 
@@ -42,7 +42,7 @@ Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem libxklavier.
 Summary:	Static version of libxklavier library
 Summary(pl):	Statyczna wersja biblioteki libxklavier
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of libxklavier library.
