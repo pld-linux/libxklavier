@@ -5,6 +5,7 @@ Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
+# Source0-md5:	5caeb8aea1caac0c3fb0f9115f846a14
 Url:		http://gswitchit.sourceforge.net/
 BuildRequires:	doxygen
 BuildRequires:	libxml2-devel 
