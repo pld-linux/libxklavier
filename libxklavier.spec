@@ -1,12 +1,12 @@
 Summary:	libXklavier library
 Summary(pl):	Biblioteka libXklavier
 Name:		libxklavier
-Version:	1.00
+Version:	1.01
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
-# Source0-md5:	38b5d5589aeeda0a1d8f2e43ff798a6a
+# Source0-md5:	66d0ec175ca783f40fc9dbb282636e3b
 Patch0:		%{name}-xkb_base.patch
 URL:		http://gswitchit.sourceforge.net/
 BuildRequires:	XFree86-devel
@@ -14,7 +14,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	doxygen
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel 
+BuildRequires:	libxml2-devel >= 2.0.0
 BuildRequires:	pkgconfig
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,7 +30,7 @@ Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem libxklavier
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	XFree86-devel
-Requires:	libxml2-devel
+Requires:	libxml2-devel >= 2.0.0
 
 %description devel
 Header files to develop libxklavier applications.
@@ -60,7 +60,6 @@ Statyczna wersja biblioteki libxklavier.
 %{__autoconf}
 %{__automake}
 %configure
-
 %{__make}
 
 %install
