@@ -1,12 +1,12 @@
 Summary:	libXklavier library
 Summary(pl):	Biblioteka libXklavier
 Name:		libxklavier
-Version:	1.01
+Version:	1.02
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
-# Source0-md5:	66d0ec175ca783f40fc9dbb282636e3b
+# Source0-md5:	fba323a69bc904e9889df7fb5491ea55
 Patch0:		%{name}-xkb_base.patch
 URL:		http://gswitchit.sourceforge.net/
 BuildRequires:	XFree86-devel
