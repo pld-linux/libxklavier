@@ -1,39 +1,54 @@
-Name:		libxklavier
 Summary:	libXklavier library
+Summary(pl):	Biblioteka libXklavier
+Name:		libxklavier
 Version:	0.96
 Release:	1
 License:	LGPL
-Group:		Development/Libraries
+Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
 # Source0-md5:	e95baf323e145403a1cd4f9405da60da
 Patch0:		%{name}-xkb_base.patch
-Url:		http://gswitchit.sourceforge.net/
+URL:		http://gswitchit.sourceforge.net/
+BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	doxygen
 BuildRequires:	libxml2-devel 
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This library allows you simplify XKB-related development.
 
+%description -l pl
+Ta biblioteka pozwala upro¶ciæ programowanie zwi±zane z XKB.
+
 %package devel
-Summary:	Libraries, includes, etc to develop libxklavier applications
+Summary:	Header files to develop libxklavier applications
+Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem libxklavier
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	XFree86-devel
+Requires:	libxml2-devel
 
 %description devel
-Libraries, include files, etc you can use to develop libxklavier
-applications.
+Header files to develop libxklavier applications.
+
+%description devel -l pl
+Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem libxklavier.
 
 %package static
-Summary:	Static version of libxklavier
+Summary:	Static version of libxklavier library
+Summary(pl):	Statyczna wersja biblioteki libxklavier
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
-Static version of libxklavier.
+Static version of libxklavier library.
+
+%description static -l pl
+Statyczna wersja biblioteki libxklavier.
 
 %prep
 %setup -q
@@ -51,13 +66,14 @@ Static version of libxklavier.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install DESTDIR="$RPM_BUILD_ROOT"
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -68,9 +84,9 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc doc/html/*.html doc/html/*.png doc/html/*.css
-%{_libdir}/pkgconfig/*.pc
-%{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
+%{_pkgconfigdir}/*.pc
 %{_includedir}/*
 
 %files static
