@@ -2,12 +2,11 @@ Summary:	libXklavier library
 Summary(pl):	Biblioteka libXklavier
 Name:		libxklavier
 Version:	1.14
-Release:	0.1
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
 # Source0-md5:	218728a9b14d865888305194b5d5214f
-#Patch0:		%{name}-xkb_base.patch
 URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -52,7 +51,6 @@ Statyczna wersja biblioteki libxklavier.
 
 %prep
 %setup -q
-#%patch0 -p1
 
 %build
 %{__libtoolize}
