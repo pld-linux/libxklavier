@@ -59,7 +59,9 @@ Statyczna wersja biblioteki libxklavier.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-xkb-bin-base=%{_bindir} \
+	--with-xkb-base=/usr/lib/X11/xkb/
 %{__make}
 
 %install
