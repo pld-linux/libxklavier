@@ -1,19 +1,19 @@
 Summary:	libXklavier library
 Summary(pl):	Biblioteka libXklavier
 Name:		libxklavier
-Version:	2.2
-Release:	2
-License:	LGPL
+Version:	2.91
+Release:	1
+License:	GPLv2 / LGPL v2
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
-# Source0-md5:	a9c2e53ea96ed138b588df5a9b9addaf
+# Source0-md5:	53d9864d165c86edb6a67f7ebe140814
 Patch0:		%{name}-warnings.patch
 URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	doxygen
+BuildRequires:	glib2-devel >= 1:2.11.3
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 2.6.17
+BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libxkbfile-devel
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,7 +29,7 @@ Summary:	Header files to develop libxklavier applications
 Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji z u¿yciem libxklavier
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libxml2-devel >= 2.0.0
+Requires:	libxml2-devel >= 1:2.6.26
 Requires:	xorg-lib-libxkbfile-devel
 
 %description devel
@@ -60,8 +60,10 @@ Statyczna wersja biblioteki libxklavier.
 %{__autoconf}
 %{__automake}
 %configure \
+	--enable-gtk-doc \
 	--with-xkb-bin-base=%{_bindir} \
-	--with-xkb-base=%{_datadir}/X11/xkb/
+	--with-xkb-base=%{_datadir}/X11/xkb \
+	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
 %install
@@ -84,11 +86,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/html/*.html doc/html/*.png doc/html/*.css
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_pkgconfigdir}/*.pc
 %{_includedir}/*
+%{_gtkdocdir}/%{name}
 
 %files static
 %defattr(644,root,root,755)
