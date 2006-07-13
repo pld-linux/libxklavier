@@ -2,16 +2,17 @@ Summary:	libXklavier library
 Summary(pl):	Biblioteka libXklavier
 Name:		libxklavier
 Version:	2.91
-Release:	1
+Release:	2
 License:	GPLv2 / LGPL v2
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
 # Source0-md5:	53d9864d165c86edb6a67f7ebe140814
 Patch0:		%{name}-warnings.patch
+Patch1:		%{name}-nonull.patch
 URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib2-devel >= 1:2.11.3
+BuildRequires:	glib2-devel >= 1:2.12.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
@@ -53,12 +54,14 @@ Statyczna wersja biblioteki libxklavier.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--enable-gtk-doc \
 	--with-xkb-bin-base=%{_bindir} \
