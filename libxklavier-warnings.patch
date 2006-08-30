@@ -7,6 +7,6 @@ diff -aurN libxklavier-2.91.orig/libxklavier/Makefile.am libxklavier-2.91/libxkl
  
 -AM_CFLAGS=-Wall -Werror -DDATA_DIR=\"$(datadir)/$(PACKAGE)\" \
 +AM_CFLAGS=-Wall -DDATA_DIR=\"$(datadir)/$(PACKAGE)\" \
-   -I. -I$(includedir) -I$(x_includes) -I$(top_srcdir) \
+   -I. -I$(includedir) $(X_CFLAGS) -I$(top_srcdir) \
    $(XML_CFLAGS) $(GLIB_CFLAGS) \
    $(XKB_HEADERS_PRESENT_CFLAG) \
