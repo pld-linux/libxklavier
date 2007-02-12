@@ -1,5 +1,5 @@
 Summary:	libXklavier library
-Summary(pl):	Biblioteka libXklavier
+Summary(pl.UTF-8):   Biblioteka libXklavier
 Name:		libxklavier
 Version:	3.1
 Release:	1
@@ -21,12 +21,12 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This library allows you simplify XKB-related development.
 
-%description -l pl
-Ta biblioteka pozwala upro∂ciÊ programowanie zwi±zane z XKB.
+%description -l pl.UTF-8
+Ta biblioteka pozwala upro≈õciƒá programowanie zwiƒÖzane z XKB.
 
 %package devel
 Summary:	Header files to develop libxklavier applications
-Summary(pl):	Pliki nag≥Ûwkowe do tworzenia aplikacji z uøyciem libxklavier
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe do tworzenia aplikacji z u≈ºyciem libxklavier
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libxml2-devel >= 1:2.6.26
@@ -35,19 +35,19 @@ Requires:	xorg-lib-libxkbfile-devel
 %description devel
 Header files to develop libxklavier applications.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe do tworzenia aplikacji z uøyciem libxklavier.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe do tworzenia aplikacji z u≈ºyciem libxklavier.
 
 %package static
 Summary:	Static version of libxklavier library
-Summary(pl):	Statyczna wersja biblioteki libxklavier
+Summary(pl.UTF-8):   Statyczna wersja biblioteki libxklavier
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of libxklavier library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki libxklavier.
 
 %prep
