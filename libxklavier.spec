@@ -1,5 +1,5 @@
 Summary:	libXklavier library
-Summary(pl.UTF-8):   Biblioteka libXklavier
+Summary(pl.UTF-8):	Biblioteka libXklavier
 Name:		libxklavier
 Version:	3.1
 Release:	1
@@ -26,7 +26,7 @@ Ta biblioteka pozwala uprościć programowanie związane z XKB.
 
 %package devel
 Summary:	Header files to develop libxklavier applications
-Summary(pl.UTF-8):   Pliki nagłówkowe do tworzenia aplikacji z użyciem libxklavier
+Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji z użyciem libxklavier
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libxml2-devel >= 1:2.6.26
@@ -40,7 +40,7 @@ Pliki nagłówkowe do tworzenia aplikacji z użyciem libxklavier.
 
 %package static
 Summary:	Static version of libxklavier library
-Summary(pl.UTF-8):   Statyczna wersja biblioteki libxklavier
+Summary(pl.UTF-8):	Statyczna wersja biblioteki libxklavier
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
