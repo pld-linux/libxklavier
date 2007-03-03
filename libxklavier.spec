@@ -2,7 +2,7 @@ Summary:	libXklavier library
 Summary(pl.UTF-8):	Biblioteka libXklavier
 Name:		libxklavier
 Version:	3.1
-Release:	1
+Release:	2
 License:	GPLv2 / LGPL v2
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
@@ -54,6 +54,7 @@ Statyczna wersja biblioteki libxklavier.
 %setup -q
 
 %build
+touch config.rpath
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
