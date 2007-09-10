@@ -2,15 +2,15 @@
 # Conditional build:
 %bcond_without	apidocs		# disable gtk-doc
 #
-Summary:	libXklavier library
-Summary(pl.UTF-8):	Biblioteka libXklavier
+Summary:	libxklavier library
+Summary(pl.UTF-8):	Biblioteka libxklavier
 Name:		libxklavier
-Version:	3.2
-Release:	2
-License:	GPLv2 / LGPL v2
+Version:	3.3
+Release:	1
+License:	LGPL v2+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
-# Source0-md5:	8f89a65b2d0aa8f8f5979c7d9de3d051
+# Source0-md5:	0b9a62ad4f007e6c42a70a4f6e0aecbf
 URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -23,48 +23,48 @@ BuildRequires:	xorg-lib-libxkbfile-devel
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This library allows you simplify XKB-related development.
+This library allows you to simplify XKB-related development.
 
 %description -l pl.UTF-8
 Ta biblioteka pozwala uprościć programowanie związane z XKB.
 
 %package devel
-Summary:	Header files to develop libXklavier applications
-Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji z użyciem libXklavier
+Summary:	Header files to develop libxklavier applications
+Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji z użyciem libxklavier
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libxml2-devel >= 1:2.6.26
 Requires:	xorg-lib-libxkbfile-devel
 
 %description devel
-Header files to develop libXklavier applications.
+Header files to develop libxklavier applications.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe do tworzenia aplikacji z użyciem libXklavier.
+Pliki nagłówkowe do tworzenia aplikacji z użyciem libxklavier.
 
 %package static
-Summary:	Static version of libXklavier library
-Summary(pl.UTF-8):	Statyczna wersja biblioteki libXklavier
+Summary:	Static version of libxklavier library
+Summary(pl.UTF-8):	Statyczna wersja biblioteki libxklavier
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static version of libXklavier library.
+Static version of libxklavier library.
 
 %description static -l pl.UTF-8
-Statyczna wersja biblioteki libXklavier.
+Statyczna wersja biblioteki libxklavier.
 
 %package apidocs
-Summary:	libXklavier API documentation
-Summary(pl.UTF-8):	Dokumentacja API libXklavier
+Summary:	libxklavier API documentation
+Summary(pl.UTF-8):	Dokumentacja API libxklavier
 Group:		Documentation
 Requires:	gtk-doc-common
 
 %description apidocs
-libXklavier API documentation.
+libxklavier API documentation.
 
 %description apidocs -l pl.UTF-8
-Dokumentacja API libXklavier.
+Dokumentacja API libxklavier.
 
 %prep
 %setup -q
@@ -98,20 +98,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%doc AUTHORS CREDITS ChangeLog NEWS README
+%attr(755,root,root) %{_libdir}/libxklavier.so.*.*.*
 %{_datadir}/libxklavier
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_pkgconfigdir}/*.pc
-%{_includedir}/*
+%attr(755,root,root) %{_libdir}/libxklavier.so
+%{_libdir}/libxklavier.la
+%{_pkgconfigdir}/libxklavier.pc
+%{_includedir}/libxklavier
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libxklavier.a
 
 %if %{with apidocs}
 %files apidocs
