@@ -8,7 +8,7 @@ Name:		libxklavier
 Version:	3.4
 Release:	1
 License:	LGPL v2+
-Group:		Libraries
+Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
 # Source0-md5:	2062f4e6ea20d632d6cc80def337819c
 URL:		http://www.freedesktop.org/Software/LibXklavier
@@ -31,7 +31,7 @@ Ta biblioteka pozwala uprościć programowanie związane z XKB.
 %package devel
 Summary:	Header files to develop libxklavier applications
 Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji z użyciem libxklavier
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libxml2-devel >= 1:2.6.26
 Requires:	xorg-lib-libxkbfile-devel
@@ -45,7 +45,7 @@ Pliki nagłówkowe do tworzenia aplikacji z użyciem libxklavier.
 %package static
 Summary:	Static version of libxklavier library
 Summary(pl.UTF-8):	Statyczna wersja biblioteki libxklavier
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
@@ -100,6 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS CREDITS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libxklavier.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxklavier.so.12
 %{_datadir}/libxklavier
 
 %files devel
