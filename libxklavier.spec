@@ -16,10 +16,12 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.12.4
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.7}
+BuildRequires:	iso-codes
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libxkbfile-devel
+Requires:	iso-codes
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
