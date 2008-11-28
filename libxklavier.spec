@@ -5,21 +5,22 @@
 Summary:	libxklavier library
 Summary(pl.UTF-8):	Biblioteka libxklavier
 Name:		libxklavier
-Version:	3.7
-Release:	2
+Version:	3.8
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.gz
-# Source0-md5:	2a6029c6879c0c442528a4c9e9680870
+Source0:	http://dl.sourceforge.net/gswitchit/%{name}-%{version}.tar.bz2
+# Source0-md5:	e4f1b9e600c4159f39d38ab94d56cf9b
 URL:		http://www.freedesktop.org/Software/LibXklavier
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	glib2-devel >= 1:2.12.4
+BuildRequires:	autoconf >= 2.59
+BuildRequires:	automake >= 1:1.10
+BuildRequires:	glib2-devel >= 1:2.16.0
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.7}
 BuildRequires:	iso-codes
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
+BuildRequires:	xorg-lib-libXi-devel >= 1.1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
 Requires:	iso-codes
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -72,10 +73,10 @@ Dokumentacja API libxklavier.
 %setup -q
 
 %build
-touch config.rpath
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--%{?with_apidocs:en}%{!?with_apidocs:dis}able-gtk-doc \
