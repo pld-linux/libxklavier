@@ -6,7 +6,7 @@ Summary:	libxklavier library
 Summary(pl.UTF-8):	Biblioteka libxklavier
 Name:		libxklavier
 Version:	3.9
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxklavier/3.9/%{name}-%{version}.tar.bz2
