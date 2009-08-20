@@ -6,11 +6,12 @@ Summary:	libxklavier library
 Summary(pl.UTF-8):	Biblioteka libxklavier
 Name:		libxklavier
 Version:	4.0
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxklavier/4.0/%{name}-%{version}.tar.bz2
 # Source0-md5:	1b714ba04835fb49511f9e1444a5ea4c
+Patch0:		%{name}-enumeration.patch
 URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.10
@@ -71,6 +72,7 @@ Dokumentacja API libxklavier.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %{__libtoolize}
