@@ -26,7 +26,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libXi-devel >= 1.1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
 Requires:	iso-codes
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This library allows you to simplify XKB-related development.
