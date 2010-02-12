@@ -5,13 +5,12 @@
 Summary:	libxklavier library
 Summary(pl.UTF-8):	Biblioteka libxklavier
 Name:		libxklavier
-Version:	4.0
-Release:	3
+Version:	5.0
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxklavier/4.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	1b714ba04835fb49511f9e1444a5ea4c
-Patch0:		%{name}-enumeration.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxklavier/5.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	134c7ea177ff901123b909de77394780
 URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.10
@@ -74,7 +73,6 @@ Dokumentacja API libxklavier.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 %{__libtoolize}
@@ -107,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS CREDITS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libxklavier.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libxklavier.so.15
+%attr(755,root,root) %ghost %{_libdir}/libxklavier.so.16
 
 %files devel
 %defattr(644,root,root,755)
