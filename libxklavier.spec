@@ -24,7 +24,10 @@ BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libXi-devel >= 1.1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
+Requires:	glib2 >= 1:2.16.0
 Requires:	iso-codes
+Requires:	libxml2 >= 1:2.6.26
+Requires:	xorg-lib-libXi >= 1.1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,8 +41,10 @@ Summary:	Header files to develop libxklavier applications
 Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji z użyciem libxklavier
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	glib2-devel >= 1:2.16.0
 Requires:	libxml2-devel >= 1:2.6.26
 Requires:	xorg-lib-libxkbfile-devel
+Requires:	xorg-lib-libXi-devel >= 1.1.3
 
 %description devel
 Header files to develop libxklavier applications.
