@@ -15,15 +15,16 @@ URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-devel >= 0.17
 BuildRequires:	glib2-devel >= 1:2.16.0
 BuildRequires:	gobject-introspection-devel >= 1.30.0
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.7}
 BuildRequires:	iso-codes
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXi-devel >= 1.1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
 BuildRequires:	xz
