@@ -5,12 +5,12 @@
 Summary:	libxklavier library
 Summary(pl.UTF-8):	Biblioteka libxklavier
 Name:		libxklavier
-Version:	5.2.1
+Version:	5.3
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxklavier/5.2/%{name}-%{version}.tar.xz
-# Source0-md5:	b3e718ee156d0d8883dfc3ff3bb86779
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxklavier/5.3/%{name}-%{version}.tar.xz
+# Source0-md5:	290ea2a8abc40f78a3a16bdae6f02808
 URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
