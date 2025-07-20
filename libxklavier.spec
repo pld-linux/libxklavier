@@ -6,7 +6,7 @@ Summary:	libxklavier library
 Summary(pl.UTF-8):	Biblioteka libxklavier
 Name:		libxklavier
 Version:	5.3
-Release:	6
+Release:	7
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxklavier/5.3/%{name}-%{version}.tar.xz
@@ -23,6 +23,7 @@ BuildRequires:	iso-codes
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
+BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXi-devel >= 1.1.3
@@ -84,9 +85,13 @@ Dokumentacja API libxklavier.
 %prep
 %setup -q
 
+# gtkdoc-mktmpl no longer exists
+%{__sed} -i -e '/@gtkdoc-mktmpl --module/d' gtk-doc.make
+
 %build
+%{__gettextize}
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
