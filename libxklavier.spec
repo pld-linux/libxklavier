@@ -1,19 +1,21 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# disable gtk-doc
+%bcond_without	vala		# Vala API
 
 Summary:	libxklavier library
 Summary(pl.UTF-8):	Biblioteka libxklavier
 Name:		libxklavier
-Version:	5.3
-Release:	7
+Version:	5.4
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxklavier/5.3/%{name}-%{version}.tar.xz
-# Source0-md5:	290ea2a8abc40f78a3a16bdae6f02808
+Source0:	https://people.freedesktop.org/~svu/%{name}-%{version}.tar.bz2
+# Source0-md5:	13af74dcb6011ecedf1e3ed122bd31fa
 URL:		http://www.freedesktop.org/Software/LibXklavier
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
+BuildRequires:	bzip2
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.16.0
@@ -25,10 +27,10 @@ BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
+%{?with_vala:BuildRequires:	vala}
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXi-devel >= 1.1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
-BuildRequires:	xz
 Requires:	glib2 >= 1:2.16.0
 Requires:	iso-codes
 Requires:	libxml2 >= 1:2.6.26
@@ -97,6 +99,7 @@ Dokumentacja API libxklavier.
 %{__automake}
 %configure \
 	%{__enable_disable apidocs gtk-doc} \
+	%{__enable_disable vala vala} \
 	--disable-silent-rules \
 	--with-xkb-bin-base=%{_bindir} \
 	--with-xkb-base=%{_datadir}/X11/xkb \
@@ -132,6 +135,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gir-1.0/Xkl-1.0.gir
 %{_pkgconfigdir}/libxklavier.pc
 %{_includedir}/libxklavier
+%if %{with vala}
+%{_datadir}/vala/vapi/libxklavier.deps
+%{_datadir}/vala/vapi/libxklavier.vapi
+%endif
 
 %files static
 %defattr(644,root,root,755)
